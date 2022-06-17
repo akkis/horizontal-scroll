@@ -33,9 +33,9 @@ body {
     animation-play-state: var(--pause-on-hover);
 }
 
-/* .marquee-container:active div { */
-    /* animation-play-state: var(--pause-on-click); */
-/* } */
+.marquee-container:active div {
+    animation-play-state: var(--pause-on-click);
+}
   
 .marquee {
     --play: running;
