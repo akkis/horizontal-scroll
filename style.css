@@ -1,0 +1,68 @@
+body {
+    background: lightgrey;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+   
+.gallery-item {
+    align-items: center;
+    display: flex;
+    margin-right: 2rem;
+}
+  
+.gallery-item img {
+    height: auto;
+    max-height: 400px;
+    width: auto;
+    max-width: 350px;
+}
+
+.marquee-container {
+    --pause-on-hover: paused;
+    --pause-on-click: running;
+    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: row !important;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-container:hover div {
+    animation-play-state: var(--pause-on-hover);
+}
+
+.marquee-container:active div {
+    /* animation-play-state: var(--pause-on-click); */
+}
+  
+.marquee {
+    --play: running;
+    --direction: normal;
+    --duration: 10s;
+    --delay: 0s;
+    --iteration-count: infinite;
+    flex: 0 0 auto;
+    min-width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    will-change: transform;
+    animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+    animation-play-state: var(--play);
+    animation-delay: var(--delay);
+    animation-direction: var(--direction);
+    transition: all 3s ease-in-out;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+  
